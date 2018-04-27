@@ -2,27 +2,30 @@ package org.helloworldmvc.model;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class DAOHelloWorld {
 	
-	final String fileName = "/home/abi/Hello.txt";
 	
-	static String readFile(String fileName) throws IOException {
-	    BufferedReader br = new BufferedReader(new FileReader(fileName));
-	    try {
-	        StringBuilder sb = new StringBuilder();
+	static String readFile(String fileName) {
+	    BufferedReader br;
+        StringBuilder sb = new StringBuilder();
+
+		try {
+			br = new BufferedReader(new FileReader(fileName));
+			
 	        String line = br.readLine();
 
 	        while (line != null) {
 	            sb.append(line);
 	            sb.append("\n");
 	            line = br.readLine();
-	        }
-	        return sb.toString();
-	    } finally {
-	        br.close();
-	    }
-	}
+			     br.close();
 
+	        }
+	    } catch(Exception e) {
+	    	e.printStackTrace();
+	    }   	
+        return sb.toString();
+
+	}
 }

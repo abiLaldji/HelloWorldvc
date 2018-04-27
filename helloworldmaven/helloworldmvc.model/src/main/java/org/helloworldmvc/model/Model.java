@@ -1,7 +1,5 @@
 package org.helloworldmvc.model;
 
-import java.io.IOException;
-
 import org.helloworldmvc.contract.IModel;
 
 public class Model implements IModel{
@@ -9,7 +7,7 @@ public class Model implements IModel{
 	final String fileName = "/home/abi/Hello.txt";
 
 
-	public String getHelloWorld() throws IOException {
+	public String getHelloWorld() {
 		return DAOHelloWorld.readFile(fileName);
 	}
 

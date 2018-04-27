@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.helloworldmvc.contract.IModel;
 import org.helloworldmvc.contract.IView;
 
+
 public class Controller {
 	private IView view;
 	private IModel model;
@@ -15,8 +16,17 @@ public class Controller {
 		
 	}
 	
-	public void run() throws IOException {
-		this.view.displayMessage(this.model.getHelloWorld());
+	public void run() {
+			
+		
+				try {
+					System.out.println(this.view.displayMessage(model.getHelloWorld()));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			
+			
+		
 		
 	}
 
