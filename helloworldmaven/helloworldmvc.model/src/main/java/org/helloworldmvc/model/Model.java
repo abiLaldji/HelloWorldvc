@@ -4,7 +4,7 @@ import org.helloworldmvc.contract.IModel;
 
 public class Model implements IModel{
 	
-	final String fileName = "/home/abi/Hello.txt";
+	final String fileName = "Hello.txt";
 
 
 	public String getHelloWorld() {
